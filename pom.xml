@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.j256.ormlite</groupId>
 	<artifactId>ormlite-android</artifactId>
-	<version>5.2-SNAPSHOT</version>
+	<version>5.2</version>
 	<packaging>jar</packaging>
 	<name>ORMLite Android</name>
 	<url>http://ormlite.sourceforge.net/</url>
@@ -57,6 +57,12 @@
 	<profiles>
 		<profile>
 			<id>st</id>
+			<repositories>
+				<repository>
+					<id>jitpack.io</id>
+					<url>https://jitpack.io</url>
+				</repository>
+			</repositories>
 			<distributionManagement>
 				<repository>
 					<id>sonatype-nexus-staging</id>
@@ -74,7 +80,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.1</version>
+						<version>1.6</version>
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>
@@ -98,13 +104,17 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<repositories>
-				<repository>
-					<id>j256.com-snapshot</id>
-					<url>s3://j256.com/maven/snapshot</url>
-					<snapshots>
-						<enabled>true</enabled>
-					</snapshots>
-				</repository>
+<!--				<repository>-->
+<!--					<id>local-repo</id>-->
+<!--					<url>file://${project.basedir}/lib</url>-->
+<!--				</repository>-->
+<!--				<repository>-->
+<!--					<id>j256.com-snapshot</id>-->
+<!--					<url>s3://j256.com/maven/snapshot</url>-->
+<!--					<snapshots>-->
+<!--						<enabled>true</enabled>-->
+<!--					</snapshots>-->
+<!--				</repository>-->
 				<repository>
 					<id>j256.com-release</id>
 					<url>s3://j256.com/maven/release</url>
@@ -334,9 +344,9 @@
 	<dependencies>
 		<!-- main dependencies -->
 		<dependency>
-			<groupId>com.j256.ormlite</groupId>
+			<groupId>com.github.Dotykacka</groupId>
 			<artifactId>ormlite-core</artifactId>
-			<version>${ormlite-version}</version>
+			<version>5.2</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.android</groupId>
@@ -355,11 +365,9 @@
 
 		<!-- test dependencies -->
 		<dependency>
-			<groupId>com.j256.ormlite</groupId>
+			<groupId>com.github.Dotykacka</groupId>
 			<artifactId>ormlite-core</artifactId>
-			<version>${ormlite-version}</version>
-			<classifier>tests</classifier>
-			<scope>test</scope>
+			<version>5.2</version>
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>

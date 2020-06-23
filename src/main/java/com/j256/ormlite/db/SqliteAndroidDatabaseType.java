@@ -24,15 +24,20 @@ import com.j256.ormlite.table.DatabaseTableConfig;
 public class SqliteAndroidDatabaseType extends BaseSqliteDatabaseType {
 
 	@Override
-	public boolean loadDriver() {
+	public void loadDriver() {
 		// noop
-		return true;
 	}
 
 	@Override
 	public boolean isDatabaseUrlThisType(String url, String dbTypePart) {
 		// not used by the android code
 		return true;
+	}
+
+	@Override
+	protected String getDriverClassName() {
+		// no driver to load in android-land
+		return null;
 	}
 
 	@Override
