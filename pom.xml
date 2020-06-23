@@ -57,12 +57,6 @@
 	<profiles>
 		<profile>
 			<id>st</id>
-			<repositories>
-				<repository>
-					<id>jitpack.io</id>
-					<url>https://jitpack.io</url>
-				</repository>
-			</repositories>
 			<distributionManagement>
 				<repository>
 					<id>sonatype-nexus-staging</id>
@@ -104,17 +98,6 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<repositories>
-<!--				<repository>-->
-<!--					<id>local-repo</id>-->
-<!--					<url>file://${project.basedir}/lib</url>-->
-<!--				</repository>-->
-<!--				<repository>-->
-<!--					<id>j256.com-snapshot</id>-->
-<!--					<url>s3://j256.com/maven/snapshot</url>-->
-<!--					<snapshots>-->
-<!--						<enabled>true</enabled>-->
-<!--					</snapshots>-->
-<!--				</repository>-->
 				<repository>
 					<id>j256.com-release</id>
 					<url>s3://j256.com/maven/release</url>
@@ -341,6 +324,12 @@
 			</extension>
 		</extensions>
 	</build>
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<!-- main dependencies -->
 		<dependency>
@@ -368,6 +357,8 @@
 			<groupId>com.github.Dotykacka</groupId>
 			<artifactId>ormlite-core</artifactId>
 			<version>5.2</version>
+			<classifier>tests</classifier>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
